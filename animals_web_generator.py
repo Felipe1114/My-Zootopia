@@ -25,6 +25,9 @@ def save_HTML_data(data):
 
 
 def get_all_animal_data():
+  """Gets needed information, form json file and puts it - for each animal - in a list of lists
+  if animal has no 'type' key, tpye will is not appended to list
+  """
   data = get_json_data()
   all_animal_informations = []
   for animal in data:
@@ -45,6 +48,7 @@ def get_all_animal_data():
 
 
 def generate_animal_informations():
+  """Generates for each list of animal-information HTML-code and wirtes it into a HTML file"""
   animal_informations = get_all_animal_data()
   output = ""
 
@@ -67,7 +71,6 @@ def generate_animal_informations():
                  f"<strong>Location:</strong> {location}<br/>"
                  f"\n</p>\n</li>\n")
 
-
   return output
 
 
@@ -78,7 +81,6 @@ def update_HTML_data(old_data="__REPLACE_ANIMALS_INFO__"):
   html = html.replace(old_data, animal_info)
 
   save_HTML_data(html)
-
 
 
 if __name__ == "__main__":
