@@ -49,16 +49,24 @@ def generate_animal_informations():
   output = ""
 
   for animal in animal_informations:
-    output += '<li class="cards__item">'
+    output += "<li class='cards__item'>"
+
     name = animal[0]
     diet = animal[1]
     location = animal[2]
 
     if len(animal) == 4:
       type = animal[3]
-      output += f"Name: {name}<br/>\nDiet: {diet}<br/>\nLocation: {location}<br/>\nType: {type}\n</li>\n\n"
+      output += (f"<div class='card__title'>{name}</div>\n"
+                 f"<p class='card__text'>\n<strong>Diet:</strong> {diet}<br/>\n"
+                 f"<strong>Location:</strong> {location}<br/>\n<strong>Type:</strong> {type}<br/>"
+                 f"\n</p>\n</li>\n")
     else:
-      output += f"Name: {name}<br/>\nDiet: {diet}<br/>\nLocation: {location}\n</li>\n\n"
+      output += (f"<div class='card__title'>{name}</div>\n"
+                 f"<p class='card__text'>\n<strong>Diet:</strong> {diet}<br/>\n"
+                 f"<strong>Location:</strong> {location}<br/>"
+                 f"\n</p>\n</li>\n")
+
 
   return output
 
