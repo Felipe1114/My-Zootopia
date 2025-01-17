@@ -1,6 +1,6 @@
 import json
-JSON_DATAPATH = "animals_data.json"
-HTML_DATAPATH = "animals_template.html"
+JSON_DATAPATH = "./animals_data.json"
+HTML_DATAPATH = "./animals_template.html"
 
 def main():
   update_HTML_data()
